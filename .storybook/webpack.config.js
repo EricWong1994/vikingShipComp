@@ -11,9 +11,12 @@ module.exports = ({ config }) => {
       {
         loader: require.resolve("react-docgen-typescript-loader"),
         options: {
-          shouldExtractLiteralValuesFromEnum: true,
-          propFilter: (prop) => {
+          shouldExtractLiteralValuesFromEnum: true, // 把枚举转换成字符串
+          propFilter: (prop) => { // 过滤表格中展示的props属性，只展示自己定义的props
             if (prop.parent) {
+              // console.log('prop.parent.fileName: ', prop.parent.fileName);
+              // vikingShipComp/node_modules/@types/react/index.d.ts
+              // vikingShipComp/src/components/Input/input.tsx
               return !prop.parent.fileName.includes('node_modules')
             }
             return true            

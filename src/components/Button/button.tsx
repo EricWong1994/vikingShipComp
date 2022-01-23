@@ -4,6 +4,16 @@ import classNames from 'classnames'
 export type ButtonSize = 'lg' | 'sm'
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
+// export enum ButtonSize {
+//   Large = 'lg',
+//   Small = 'sm'
+// }
+// export enum ButtonType {
+//   Primary = 'primary',
+//   Default = 'default',
+//   Danger = 'danger',
+//   Link = 'link'
+// }
 interface BaseButtonProps {
   className?: string;
   /**设置 Button 的禁用 */
@@ -16,6 +26,7 @@ interface BaseButtonProps {
   href?: string;
 }
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
+// A标签props：AnchorHTMLAttributes
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 /**
@@ -69,5 +80,9 @@ Button.defaultProps = {
   disabled: false,
   btnType: 'default'
 }
+// Button.defaultProps = {
+//   disabled: false,
+//   btnType: ButtonType.Default
+// }
 
 export default Button;

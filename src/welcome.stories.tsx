@@ -13,4 +13,5 @@ storiesOf('Welcome page', module)
         </code>
       </>
     )
-  }, { info : { disable: true }})
+  // }, { info : { disable: true }}) // todo
+  }, { info : { disable: true, inline: false }})

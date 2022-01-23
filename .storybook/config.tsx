@@ -18,6 +18,7 @@ const storyWrapper = (stroyFn: any) => (
 addDecorator(storyWrapper)
 addDecorator(withInfo)
 addParameters({info: { inline: true, header: false}})
+// addParameters({info: { inline: true, header: false, text: '测试文本'}}) // test
 const loaderFn = () => {
   const allExports = [require('../src/welcome.stories.tsx')];
   const req = require.context('../src/components', true, /\.stories\.tsx$/);
